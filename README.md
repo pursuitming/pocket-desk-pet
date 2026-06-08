@@ -150,6 +150,14 @@ npm run tauri dev
 
 ## 构建与发布
 
+### 校验宠物包
+
+```bash
+npm run validate:pets
+```
+
+这个命令会检查 `public/pets/pets.json` 中启用的宠物包，确认 `pet.json`、spritesheet、动画配置等基础运行资源可用。
+
 ### 构建前端产物
 
 ```bash
@@ -159,10 +167,10 @@ npm run build
 这个命令会执行：
 
 ```text
-tsc && vite build
+npm run validate:pets && tsc && vite build
 ```
 
-用于检查 TypeScript 类型并生成 `dist/` 前端产物。
+用于校验宠物包、检查 TypeScript 类型并生成 `dist/` 前端产物。
 
 ### 构建桌面安装包
 
@@ -212,7 +220,6 @@ public/pets/<pet-id>/
 [
   "moyu-cat",
   "offwork-hero",
-  "lightwing-adept",
   "goldpotato"
 ]
 ```
