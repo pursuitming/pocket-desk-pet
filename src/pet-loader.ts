@@ -1,6 +1,7 @@
 import type { PetLines, PetManifest, PetPackage } from "./types";
 
 const PET_INDEX_URL = "/pets/pets.json";
+const LOCAL_PET_INDEX_URL = "/pets/pets.local.json";
 
 async function fetchJson<T>(url: string): Promise<T> {
   const response = await fetch(url, { cache: "no-store" });
@@ -13,7 +14,7 @@ async function fetchJson<T>(url: string): Promise<T> {
 }
 
 export async function loadPetIds(): Promise<string[]> {
-  return fetchJson<string[]>(PET_INDEX_URL);
+  return fetchJson<string[]>(LOCAL_PET_INDEX_URL).catch(() => fetchJson<string[]>(PET_INDEX_URL));
 }
 
 export async function loadPetPackage(id: string): Promise<PetPackage> {

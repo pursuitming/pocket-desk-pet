@@ -10,6 +10,7 @@ src-tauri/target/
 
 # Local-only source assets and third-party/IP test assets
 /pets/
+/public/pets/pets.local.json
 /public/pets/blue-eyes/
 /public/pets/luofeng/
 /public/pets/kyojuroregoku-demonslayer/

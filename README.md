@@ -244,6 +244,14 @@ public/pets/<pet-id>/
 ]
 ```
 
+如果你本地有不适合公开提交的测试宠物，可以创建本地覆盖文件：
+
+```text
+public/pets/pets.local.json
+```
+
+应用启动时会优先读取 `pets.local.json`，读取不到时再回退到公开的 `pets.json`。这个本地文件已加入 `.gitignore`，适合放仅供本机使用的宠物列表。
+
 ### `pet.json` 示例
 
 ```json
