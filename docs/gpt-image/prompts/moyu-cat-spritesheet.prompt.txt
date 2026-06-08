@@ -1,0 +1,36 @@
+Create exactly one production-ready 2D cartoon game spritesheet for an original desktop pet named moyu-cat.
+
+Canvas and layout:
+- Exact canvas: 1024 x 1536 pixels.
+- Exact grid: 6 columns x 9 rows.
+- Exact cell size: about 170 x 170 pixels.
+- Exactly 54 frames total: six frames in every row, nine rows total.
+- No visible grid lines, no labels, no text, no watermark.
+- Every frame is centered in its cell with the same character scale, same proportions, and clean transparent padding.
+- Keep all art inside the cell boundaries.
+- Use a perfectly flat pure chroma-key green background, exactly color #00FF00, across the whole canvas.
+- Do not draw a gray, white, black, paper, studio, gradient, checkerboard, shadow, or textured background.
+- Leave clear green space between frames so the background can be removed cleanly later.
+
+Art direction:
+- Cute chibi desktop pet, pixel-art inspired cartoon rendering, crisp readable silhouette, clean cel shading, limited cozy palette.
+- Original gray-white cat with soft rounded body, red collar, small golden bell, sleepy eyes, tiny paws, expressive tail.
+- The cat should feel lazy, healing, slightly spoiled, and occasionally grumpy.
+- High readability at small desktop-pet size. Avoid realism, heavy gradients, noisy fur, photo texture, hard shadows, background scenery, props that break the silhouette.
+
+Rows from top to bottom:
+1. idle: cat loafing or lying low, slow blinking, tiny tail twitch.
+2. walkLeft: short left-facing walk cycle, small paws stepping, tail balancing.
+3. walkRight: mirrored right-facing walk cycle, same body design.
+4. touch: being patted on the head, eyes squinting, ears soft, small pleased reaction.
+5. drag: being picked up, body stretching slightly, paws dangling, mildly annoyed expression.
+6. jump/drop: small lazy jump, mid-air stretch, landing bounce, squash and stretch, then regaining posture.
+7. sleep: curled up sleeping, gentle breathing, closed eyes.
+8. happy: cheerful purr, bright eyes, tail perk, little bounce.
+9. special: dramatic slacking-off pose, lying flat like a melted cat, tiny smug face, still no text.
+
+Consistency rules:
+- Keep the red collar and gold bell visible in every frame.
+- Keep the same face markings, ear shape, body size, tail style, and color palette across all 72 frames.
+- Make each row read as a smooth short animation sequence.
+- Flat #00FF00 chroma-key background only.

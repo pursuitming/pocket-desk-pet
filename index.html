@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeskPet</title>
+  </head>
+  <body>
+    <main id="app-shell">
+      <div id="pet-stage" aria-label="DeskPet animation stage"></div>
+      <div id="speech-bubble" aria-live="polite"></div>
+      <div id="pet-dock">
+        <select id="pet-select" aria-label="选择宠物"></select>
+        <select id="scale-select" aria-label="缩放比例">
+          <option value="0.75">小</option>
+          <option value="1">默认</option>
+          <option value="1.25">大</option>
+          <option value="1.5">超大</option>
+        </select>
+        <button type="button" data-action="jump">跳跃</button>
+        <button type="button" data-action="sleep">睡觉</button>
+        <button type="button" data-action="happy">开心</button>
+        <button type="button" data-action="special">专属</button>
+        <button id="quit-button" type="button">退出</button>
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

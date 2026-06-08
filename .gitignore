@@ -1,0 +1,15 @@
+node_modules/
+dist/
+target/
+src-tauri/target/
+.idea/
+*.log
+.env
+.env.*
+!.env.example
+
+# Local-only source assets and third-party/IP test assets
+/pets/
+/public/pets/blue-eyes/
+/public/pets/luofeng/
+/public/pets/kyojuroregoku-demonslayer/

@@ -1,0 +1,23 @@
+{
+  "name": "deskpet",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 1420",
+    "build": "tsc && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 1420",
+    "desktop": "powershell.exe -ExecutionPolicy Bypass -File scripts/run-desktop.ps1",
+    "desktop:build": "powershell.exe -ExecutionPolicy Bypass -File scripts/build-desktop.ps1",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.0.0",
+    "pixi.js": "^7.4.2"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.0.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}

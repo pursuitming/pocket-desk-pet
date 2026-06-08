@@ -1,0 +1,36 @@
+Create a single 2D cartoon game spritesheet for an original desktop pet named lightwing-adept.
+
+Canvas and layout:
+- Exact canvas: 1024 x 1536 pixels.
+- Exact grid: 6 columns x 9 rows.
+- Exact cell size: about 170 x 170 pixels.
+- Exactly 54 frames total: six frames in every row, nine rows total.
+- No visible grid lines, no labels, no text, no watermark.
+- Every frame is centered in its cell with the same character scale, same proportions, and clean transparent padding.
+- Keep all art inside the cell boundaries.
+- Use a perfectly flat pure chroma-key green background, exactly color #00FF00, across the whole canvas.
+- Do not draw a gray, white, black, paper, studio, gradient, checkerboard, shadow, or textured background.
+- Leave clear green space between frames so the background can be removed cleanly later.
+
+Art direction:
+- Cute chibi desktop pet, pixel-art inspired cartoon rendering, crisp readable silhouette, clean cel shading, elegant and luminous.
+- Original ancient-fantasy young adept with blue and gold robes, white-blue hair, small glowing feather-like light wings, calm face.
+- Personality: cool, poetic, distant but gentle.
+- High readability at small desktop-pet size. Avoid photorealism, complex religious symbols, crowded robes, background scenery, text, sharp scary wings.
+
+Rows from top to bottom:
+1. idle: floating quietly, robe hem and light wings gently swaying.
+2. walkLeft: left-facing gliding movement, feet barely touching air, sleeve trailing.
+3. walkRight: right-facing gliding movement, same design.
+4. touch: being patted, pretending to be indifferent, slight blush or side glance.
+5. drag: floating while being pulled, sleeves and wings trailing, composed but annoyed.
+6. jump/drop: graceful upward hop or floating leap, soft landing from a glow, robe settles, wings fold.
+7. sleep: seated meditation sleep, eyes closed, wings dimmed.
+8. happy: subtle smile, wings brighten, small floating sparkles, no text.
+9. special: radiant light-wing flourish, blue-gold aura expands briefly, still compact and inside cells.
+
+Consistency rules:
+- Keep blue-gold robe motifs, white-blue hair, glowing feather wings, and calm face in every frame.
+- Keep the same proportions, wing size, robe silhouette, and color palette across all 72 frames.
+- Make each row read as a smooth short animation sequence.
+- Flat #00FF00 chroma-key background only.

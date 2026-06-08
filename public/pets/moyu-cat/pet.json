@@ -1,0 +1,23 @@
+{
+  "id": "moyu-cat",
+  "name": "摸鱼猫",
+  "author": "DeskPet",
+  "version": "0.1.0",
+  "sprite": "spritesheet.webp",
+  "preview": "preview.webp",
+  "frameWidth": 170,
+  "frameHeight": 170,
+  "scale": 1.55,
+  "animations": {
+    "idle": { "row": 0, "frames": 6, "fps": 8, "loop": true },
+    "walkLeft": { "row": 1, "frames": 6, "fps": 10, "loop": true },
+    "walkRight": { "row": 2, "frames": 6, "fps": 10, "loop": true },
+    "touch": { "row": 3, "frames": 6, "fps": 12, "loop": false },
+    "drag": { "row": 4, "frames": 6, "fps": 8, "loop": true },
+    "jump": { "row": 5, "frames": 6, "fps": 12, "loop": false },
+    "drop": { "row": 5, "frames": 6, "fps": 12, "loop": false },
+    "sleep": { "row": 6, "frames": 6, "fps": 6, "loop": true },
+    "happy": { "row": 7, "frames": 6, "fps": 12, "loop": false },
+    "special": { "row": 8, "frames": 6, "fps": 12, "loop": false }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "id": "goldpotato",
+  "name": "金土豆",
+  "author": "DeskPet",
+  "version": "0.1.0",
+  "sprite": "goldpotato.png",
+  "preview": "goldpotato.png",
+  "frameWidth": 204,
+  "frameHeight": 256,
+  "scale": 0.95,
+  "animations": {
+    "idle": {
+      "cells": [
+        { "column": 0, "row": 0 },
+        { "column": 1, "row": 0 },
+        { "column": 2, "row": 0 },
+        { "column": 0, "row": 2 },
+        { "column": 0, "row": 3 }
+      ],
+      "fps": 6,
+      "loop": true
+    },
+    "walkLeft": {
+      "cells": [
+        { "column": 2, "row": 0 },
+        { "column": 1, "row": 1 },
+        { "column": 2, "row": 1 },
+        { "column": 1, "row": 2 },
+        { "column": 2, "row": 2 }
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "walkRight": {
+      "cells": [
+        { "column": 1, "row": 3 },
+        { "column": 2, "row": 3 },
+        { "column": 1, "row": 4 },
+        { "column": 2, "row": 4 },
+        { "column": 1, "row": 5 }
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "touch": {
+      "cells": [
+        { "column": 3, "row": 0 },
+        { "column": 3, "row": 1 },
+        { "column": 3, "row": 2 },
+        { "column": 3, "row": 3 }
+      ],
+      "fps": 9,
+      "loop": false
+    },
+    "drag": {
+      "cells": [
+        { "column": 4, "row": 0 },
+        { "column": 4, "row": 1 },
+        { "column": 4, "row": 2 },
+        { "column": 4, "row": 3 }
+      ],
+      "fps": 7,
+      "loop": true
+    },
+    "jump": {
+      "cells": [
+        { "column": 1, "row": 1 },
+        { "column": 2, "row": 1 },
+        { "column": 4, "row": 5 }
+      ],
+      "fps": 10,
+      "loop": false
+    },
+    "drop": {
+      "cells": [
+        { "column": 4, "row": 5 },
+        { "column": 0, "row": 4 },
+        { "column": 0, "row": 0 }
+      ],
+      "fps": 10,
+      "loop": false
+    },
+    "sleep": {
+      "cells": [
+        { "column": 0, "row": 1 },
+        { "column": 3, "row": 4 },
+        { "column": 0, "row": 1 },
+        { "column": 3, "row": 4 }
+      ],
+      "fps": 3,
+      "loop": true
+    },
+    "happy": {
+      "cells": [
+        { "column": 3, "row": 5 },
+        { "column": 4, "row": 5 },
+        { "column": 3, "row": 5 },
+        { "column": 4, "row": 5 }
+      ],
+      "fps": 7,
+      "loop": false
+    },
+    "special": {
+      "cells": [
+        { "column": 4, "row": 0 },
+        { "column": 4, "row": 1 },
+        { "column": 4, "row": 2 },
+        { "column": 4, "row": 4 },
+        { "column": 4, "row": 5 }
+      ],
+      "fps": 7,
+      "loop": false
+    }
+  }
+}

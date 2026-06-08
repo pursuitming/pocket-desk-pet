@@ -1,0 +1,36 @@
+Create a single 2D cartoon game spritesheet for an original desktop pet named offwork-hero.
+
+Canvas and layout:
+- Exact canvas: 1024 x 1536 pixels.
+- Exact grid: 6 columns x 9 rows.
+- Exact cell size: about 170 x 170 pixels.
+- Exactly 54 frames total: six frames in every row, nine rows total.
+- No visible grid lines, no labels, no text, no watermark.
+- Every frame is centered in its cell with the same character scale, same proportions, and clean transparent padding.
+- Keep all art inside the cell boundaries.
+- Use a perfectly flat pure chroma-key green background, exactly color #00FF00, across the whole canvas.
+- Do not draw a gray, white, black, paper, studio, gradient, checkerboard, shadow, or textured background.
+- Leave clear green space between frames so the background can be removed cleanly later.
+
+Art direction:
+- Cute chibi desktop pet, pixel-art inspired cartoon rendering, crisp readable silhouette, clean cel shading, energetic but compact.
+- Original blond tiny hero with blue suit, red cape, red boots, simple gold belt, no real superhero logos, no letter emblems.
+- Personality: hot-blooded office-worker savior, encouraging but easy to emotionally break when overtime appears.
+- High readability at small desktop-pet size. Avoid realism, comic-book brand references, huge muscles, busy armor, background scenery, text balloons, logos.
+
+Rows from top to bottom:
+1. idle: hands on waist, heroic stance, cape gently fluttering.
+2. walkLeft: left-facing determined walk cycle, cape trailing behind.
+3. walkRight: right-facing determined walk cycle, same design.
+4. touch: salutes after being clicked, bright heroic smile.
+5. drag: being dragged by the cape or collar, arms flailing, embarrassed expression.
+6. jump/drop: energetic heroic jump, short airborne pose, superhero landing in a tiny cute pose, cape settling.
+7. sleep: curled up in cape like a blanket, exhausted but peaceful.
+8. happy: victory pose, little hop, cape flare, confident grin.
+9. special: off-work rescue moment, flying upward slightly with cape spread and golden energy burst, no text.
+
+Consistency rules:
+- Keep blond hair shape, blue suit, red cape, red boots, and gold belt visible in every frame.
+- Keep the same face, body proportions, cape length, and palette across all 72 frames.
+- Make each row read as a smooth short animation sequence.
+- Flat #00FF00 chroma-key background only.
