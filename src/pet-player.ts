@@ -50,7 +50,7 @@ export class PetPlayer {
     this.layout();
   }
 
-  play(animationId: AnimationId): void {
+  play(animationId: AnimationId, onComplete?: () => void): void {
     if (!this.manifest) {
       return;
     }
@@ -70,7 +70,12 @@ export class PetPlayer {
     this.sprite.textures = textures;
     this.sprite.loop = animation.loop;
     this.sprite.animationSpeed = animation.fps / 60;
-    this.sprite.onComplete = animation.loop ? undefined : () => this.play("idle");
+    this.sprite.onComplete = animation.loop
+      ? undefined
+      : () => {
+          onComplete?.();
+          this.play("idle");
+        };
     this.sprite.gotoAndPlay(0);
   }
 

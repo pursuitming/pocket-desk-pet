@@ -1,6 +1,7 @@
 import { Application } from "pixi.js";
 import { loadPetIds, loadPetPackage } from "./pet-loader";
 import { PetPlayer } from "./pet-player";
+import { PetStateMachine } from "./pet-state";
 import type { AnimationId, PetLines, PetManifest } from "./types";
 import "./styles.css";
 
@@ -37,6 +38,7 @@ const app = new Application<HTMLCanvasElement>({
 stageHost.appendChild(app.view);
 
 const player = new PetPlayer(app);
+const petState = new PetStateMachine();
 let debugHitboxEnabled = isDebugHitboxEnabled();
 player.setDebugHitboxEnabled(debugHitboxEnabled);
 let activeManifest: PetManifest | undefined;
@@ -100,6 +102,7 @@ async function setActivePet(id: string): Promise<void> {
   }
 
   petSelect.value = id;
+  petState.reset();
   await player.load(activeManifest);
   showLine("idle");
 }
@@ -365,7 +368,11 @@ function toggleDebugHitbox(): void {
 }
 
 function playWithLine(animationId: AnimationId): void {
-  player.play(animationId);
+  if (!petState.request(animationId)) {
+    return;
+  }
+
+  player.play(animationId, () => petState.complete(animationId));
   showLine(animationId);
 }
 
