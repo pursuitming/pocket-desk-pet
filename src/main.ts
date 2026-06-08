@@ -37,6 +37,8 @@ const app = new Application<HTMLCanvasElement>({
 stageHost.appendChild(app.view);
 
 const player = new PetPlayer(app);
+let debugHitboxEnabled = isDebugHitboxEnabled();
+player.setDebugHitboxEnabled(debugHitboxEnabled);
 let activeManifest: PetManifest | undefined;
 let activeLines: PetLines = {};
 let bubbleTimer: number | undefined;
@@ -160,6 +162,13 @@ function bindEvents(): void {
   });
 
   window.addEventListener("resize", () => player.layout());
+
+  window.addEventListener("keydown", (event) => {
+    if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === "h") {
+      event.preventDefault();
+      toggleDebugHitbox();
+    }
+  });
 
   document.addEventListener(
     "contextmenu",
@@ -331,6 +340,28 @@ async function quitApp(): Promise<void> {
 
 function isTauri(): boolean {
   return "__TAURI_INTERNALS__" in window;
+}
+
+function isDebugHitboxEnabled(): boolean {
+  try {
+    const value = new URLSearchParams(window.location.search).get("debugHitbox") ?? localStorage.getItem("deskpet:debugHitbox");
+    return value === "1" || value === "true";
+  } catch {
+    return false;
+  }
+}
+
+function toggleDebugHitbox(): void {
+  debugHitboxEnabled = !debugHitboxEnabled;
+  player.setDebugHitboxEnabled(debugHitboxEnabled);
+
+  try {
+    localStorage.setItem("deskpet:debugHitbox", debugHitboxEnabled ? "1" : "0");
+  } catch {
+    // Ignore persistence failures so debug mode stays best-effort.
+  }
+
+  showStatusLine(debugHitboxEnabled ? "Hitbox 调试已开启" : "Hitbox 调试已关闭");
 }
 
 function playWithLine(animationId: AnimationId): void {

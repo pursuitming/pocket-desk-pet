@@ -27,6 +27,8 @@ export class PetPlayer {
   private manifest?: PetManifest;
   private userScale = 1;
   private textures: AnimationTextures = {};
+  private hitboxOverlay?: Graphics;
+  private debugHitboxEnabled = false;
   private loadedSpriteUrl?: string;
 
   constructor(private readonly app: Application<HTMLCanvasElement>) {
@@ -81,6 +83,11 @@ export class PetPlayer {
     this.layout();
   }
 
+  setDebugHitboxEnabled(enabled: boolean): void {
+    this.debugHitboxEnabled = enabled;
+    this.updateHitboxOverlay();
+  }
+
   containsClientPoint(clientX: number, clientY: number): boolean {
     if (!this.current || !this.manifest) {
       return false;
@@ -114,6 +121,39 @@ export class PetPlayer {
     this.current.scale.set(this.manifest.scale * this.userScale);
     this.current.x = Math.round(this.app.screen.width / 2);
     this.current.y = Math.round(this.app.screen.height / 2 - 10);
+    this.updateHitboxOverlay();
+  }
+
+  private updateHitboxOverlay(): void {
+    if (!this.debugHitboxEnabled) {
+      this.hitboxOverlay?.destroy();
+      this.hitboxOverlay = undefined;
+      return;
+    }
+
+    if (!this.current || !this.manifest) {
+      return;
+    }
+
+    if (!this.hitboxOverlay) {
+      this.hitboxOverlay = new Graphics();
+    }
+
+    const scale = this.manifest.scale * this.userScale;
+    const hitbox = this.resolveHitbox(this.manifest);
+    const x = (hitbox.x - this.manifest.frameWidth / 2) * scale;
+    const y = (hitbox.y - this.manifest.frameHeight / 2) * scale;
+
+    this.hitboxOverlay.clear();
+    this.hitboxOverlay.lineStyle(2, 0xff2d55, 0.95);
+    this.hitboxOverlay.beginFill(0xff2d55, 0.14);
+    this.hitboxOverlay.drawRect(x, y, hitbox.width * scale, hitbox.height * scale);
+    this.hitboxOverlay.endFill();
+    this.hitboxOverlay.x = this.current.x;
+    this.hitboxOverlay.y = this.current.y;
+    this.hitboxOverlay.visible = true;
+
+    this.app.stage.addChild(this.hitboxOverlay);
   }
 
   private resolveHitbox(manifest: PetManifest): PetHitbox {
@@ -252,6 +292,8 @@ export class PetPlayer {
 
   private async dispose(): Promise<void> {
     this.current?.destroy({ children: true, texture: false, baseTexture: false });
+    this.hitboxOverlay?.destroy();
+    this.hitboxOverlay = undefined;
     this.current = undefined;
     this.sprite = undefined;
     this.textures = {};

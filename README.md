@@ -200,6 +200,26 @@ src-tauri/target/release/bundle/
 
 ---
 
+## 调试 hitbox
+
+如果需要调整宠物点击范围，可以开启 hitbox 调试框。
+
+方式一：在浏览器预览地址中添加参数：
+
+```text
+http://127.0.0.1:1420/?debugHitbox=1
+```
+
+方式二：运行应用后按快捷键切换：
+
+```text
+Ctrl + Shift + H
+```
+
+开启后会用红色半透明矩形显示当前宠物的 hitbox。该开关会写入 `localStorage`，再次按快捷键可以关闭。
+
+---
+
 ## 宠物包规范
 
 每个宠物包推荐放在：
